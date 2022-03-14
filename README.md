@@ -43,15 +43,13 @@ The `CI` value comes from application.yaml configuration:
 5. Verify application console output - it should be following (this is reproducible and expected but **invalid behavior**):
   
 ```    
-2022-03-14 15:53:46,655 INFO  [io.quarkus] (main) nativeconfig 1.0.0-SNAPSHOT native (powered by Quarkus 2.5.0.Final) started in 0.013s. Listening on: http://0.0.0.0:8480
-2022-03-14 15:53:46,656 INFO  [io.quarkus] (main) Profile NONE-CI activated.
-2022-03-14 15:53:46,656 INFO  [io.quarkus] (main) Installed features: [cdi, config-yaml, resteasy, servlet, smallrye-context-propagation, vertx]
+2022-03-14 16:07:55,446 INFO  [io.quarkus] (main) nativeconfig 1.0.0-SNAPSHOT native (powered by Quarkus 2.5.0.Final) started in 0.014s. Listening on: http://0.0.0.0:8480
+2022-03-14 16:07:55,446 INFO  [io.quarkus] (main) Profile NONE-CI activated.
+2022-03-14 16:07:55,446 INFO  [io.quarkus] (main) Installed features: [cdi, config-yaml, resteasy, servlet, smallrye-context-propagation, vertx]
 Read value [       Optional[DEFAULT_VALUE]] for key [   stage.environment] using [microprofile.Config directly from javax.Filter]
 Read value [                Optional.empty] for key [        stage.colour] using [microprofile.Config directly from javax.Filter]
-Read value [                Optional.empty] for key [   stage.environment] using [microprofile.Config indirectly via Helper class]
+Read value [                  Optional[CI]] for key [   stage.environment] using [microprofile.Config indirectly via Helper class]
 Read value [               Optional[GREEN]] for key [        stage.colour] using [microprofile.Config indirectly via Helper class]
 ```
 
-**Please note, that**
-- for key (stage.environment) having default value in config both results are invalid - directly from Filter and indirectly via Helper class
-- for key (stage.colour) which doesn't have default value result read directly from Config in Filter is invalid, but read via  Helper class is correct 
+**Please note, that reading config values directly from javax.Filter, no profile is used. However as you can see above in logs, there is message "Profile NONE-CI activated".**
