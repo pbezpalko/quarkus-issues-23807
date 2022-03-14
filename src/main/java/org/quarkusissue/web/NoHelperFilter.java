@@ -22,8 +22,15 @@ public class NoHelperFilter implements javax.servlet.Filter {
     @Override
     public void doFilter(final ServletRequest servletRequest, final ServletResponse servletResponse,
             final FilterChain filterChain) throws IOException, ServletException {
-        Optional<String> value = config.getOptionalValue("stage.environment", String.class);
-        System.out.println(value + " from filter with no helper class");
+
+        final String usageType = "microprofile.Config directly from javax.Filter";
+        String key;
+
+        key = "stage.environment";
+        LogUtil.log(key, config.getOptionalValue(key, String.class), usageType);
+
+        key = "stage.colour";
+        LogUtil.log(key, config.getOptionalValue(key, String.class), usageType);
 
         filterChain.doFilter(servletRequest, servletResponse);
     }

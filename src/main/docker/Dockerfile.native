@@ -25,4 +25,4 @@ COPY --chown=1001:root target/*-runner /work/application
 EXPOSE 8480
 USER 1001
 
-CMD ./application -Dquarkus.profile=$STAGE_ENVIRONMENT
+CMD ./application -Dquarkus.profile=$PROFILE

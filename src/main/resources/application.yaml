@@ -3,8 +3,11 @@ quarkus:
     type: uber-jar
   http:
     port: 8480
+# property stage.environment has default value (= DEFAULT_VALUE) and it is overwritten in NONE-CI profile (= CI)
+# property stage.type has no default value and it is set in NONE-CI profile (= PROD)
 stage:
   environment: DEFAULT_VALUE
 '%NONE-CI':
   stage:
     environment: CI
+    colour: GREEN

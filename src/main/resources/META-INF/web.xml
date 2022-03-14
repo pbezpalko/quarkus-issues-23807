@@ -3,8 +3,16 @@
          xmlns="http://java.sun.com/xml/ns/javaee"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
+
+    <!--  The order of all filters needs to be define here in the web.xml file. -->
+
+    <!-- Please note that there are no "filter" elements in this web.xml but only "filter-mapping". Filters are defined and enabled
+         by annotation @WebFilter in source code. However JEE specification doesn't give the option to manage precedence of filters' invocations in such way.
+         That's why xml entries are required.
+
+         See more: https://stackoverflow.com/questions/6560969/how-to-define-servlet-filter-order-of-execution-using-annotations-in-war -->
     <filter-mapping>
-        <filter-name>SampleFilter</filter-name>
+        <filter-name>WithHelperFilter</filter-name>
         <url-pattern/>
     </filter-mapping>
 
