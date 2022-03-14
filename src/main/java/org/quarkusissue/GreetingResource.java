@@ -1,4 +1,4 @@
-package org.pbezpalko;
+package org.quarkusissue;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

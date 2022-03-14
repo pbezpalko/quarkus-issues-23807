@@ -1,4 +1,4 @@
-package org.pbezpalko.web;
+package org.quarkusissue.web;
 
 import java.util.Optional;
 

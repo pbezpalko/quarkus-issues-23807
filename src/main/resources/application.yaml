@@ -3,6 +3,8 @@ quarkus:
     type: uber-jar
   http:
     port: 8480
+stage:
+  environment: DEFAULT_VALUE
 '%NONE-CI':
   stage:
     environment: CI
