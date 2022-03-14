@@ -1,0 +1,8 @@
+quarkus:
+  package:
+    type: uber-jar
+  http:
+    port: 8480
+'%NONE-CI':
+  stage:
+    environment: CI
