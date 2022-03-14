@@ -1,7 +1,12 @@
 To reproduce issue-23807:
 
 ## Run Quarkus application in standard JVM mode
-1. Activate profile NONE-CI 
+1. Build application command:
+`mvn clean install`
+
+2. Run java jar with profile NONE-CI activated
+`java -Dquarkus-profile=NONE-CI -jar target\nativeconfig-1.0.0-SNAPSHOT-runner.jar`
+ 
 2. Call http://localhost:8480/hello/sample 
 3. Verify application console output - it should be following (this is expected and valid behaviour):
 ```    
