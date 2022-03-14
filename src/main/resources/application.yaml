@@ -4,7 +4,7 @@ quarkus:
   http:
     port: 8480
 # property stage.environment has default value (= DEFAULT_VALUE) and it is overwritten in NONE-CI profile (= CI)
-# property stage.type has no default value and it is set in NONE-CI profile (= PROD)
+# property stage.colour has no default value and it is set in NONE-CI profile (= GREEN)
 stage:
   environment: DEFAULT_VALUE
 '%NONE-CI':
