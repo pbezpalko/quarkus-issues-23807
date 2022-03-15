@@ -21,9 +21,12 @@ Read value [               Optional[GREEN]] for key [        stage.colour] using
 The `CI` value comes from application.yaml configuration:
 
 ```
-%NONE-CI:
+stage:
+  environment: DEFAULT_VALUE
+'%NONE-CI':
   stage:
     environment: CI
+    colour: GREEN
 ```
 
 **Please note, that using standard JVM approach everything works fine.**
